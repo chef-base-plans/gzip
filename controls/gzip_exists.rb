@@ -1,4 +1,4 @@
-git_path = input('gzip_path', value: '/bin/gzip')
+gzip_path = input('gzip_path', value: '/bin/gzip')
 
 describe file(gzip_path) do
   it { should exist }
