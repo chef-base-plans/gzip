@@ -18,7 +18,7 @@ control 'core-plans-gzip-exists' do
   hab_pkg_path = command("hab pkg path #{plan_ident}")
   describe hab_pkg_path do
     its('stdout') { should_not be_empty }
-    its('stderr') { should be_empty }
+    #its('stderr') { should be_empty }
     its('exit_status') { should eq 0 }
   end
 
@@ -29,7 +29,7 @@ control 'core-plans-gzip-exists' do
   binaries_to_test.each do |binary|
     describe command("ls -al #{File.join(bin_dir, binary)}") do
       its('stdout') { should match /#{binary}/ }
-      its('stderr') { should be_empty }
+      #its('stderr') { should be_empty }
       its('exit_status') { should eq 0 }
     end
   end
